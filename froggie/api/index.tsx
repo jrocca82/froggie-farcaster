@@ -26,14 +26,14 @@ app.frame("/", (c) => {
 				}}
 			>
 				{status === "initial"
-					? "Select your fruit!"
+					? "Select your favorite chain!"
 					: `Selected: ${buttonValue}`}
 			</div>
 		),
 		intents: [
-			<Button value="apple">Apple</Button>,
-			<Button value="banana">Banana</Button>,
-			<Button value="mango">Mango</Button>,
+			<Button value="apple">Base</Button>,
+			<Button value="banana">Solana</Button>,
+			<Button value="mango">Polygon</Button>,
 		],
 	});
 });
