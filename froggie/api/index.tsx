@@ -48,7 +48,7 @@ app.frame("/", (c) => {
 						whiteSpace: "pre-wrap",
 					}}
 				>
-					Hello! Choose your favorite network
+					Try le mint
 					{/* {status === 'response'
             ? `Nice choice.${fruit ? ` ${fruit.toUpperCase()}!!` : ''}`
             : 'Welcome!'} */}
@@ -56,11 +56,10 @@ app.frame("/", (c) => {
 			</div>
 		),
 		intents: [
-			<TextInput placeholder="Enter custom chain..." />,
-			<Button value="mainnet">Mainnet</Button>,
-			<Button value="polygon">Polygon</Button>,
-			<Button value="base">Base</Button>,
-			status === "response" && <Button.Reset>Reset</Button.Reset>,
+			<Button.Mint target="eip155:7777777:0x060f3edd18c47f59bd23d063bbeb9aa4a8fec6df:69420">
+				Mint
+			</Button.Mint>,
+			<Button.Redirect location="https://google.com">Google</Button.Redirect>,
 		],
 	});
 });
@@ -85,7 +84,7 @@ app.frame("/submit", (c) => {
 					textAlign: "center",
 					width: "100%",
 					color: "white",
-					fontSize: 60
+					fontSize: 60,
 				}}
 			>
 				Selected: {buttonValue}
