@@ -69,7 +69,25 @@ app.frame("/submit", (c) => {
 	const { buttonValue } = c;
 	return c.res({
 		image: (
-			<div style={{ color: "white", display: "flex", fontSize: 60 }}>
+			<div
+				style={{
+					alignItems: "center",
+					background:
+						status === "response"
+							? "linear-gradient(to right, #432889, #17101F)"
+							: "black",
+					backgroundSize: "100% 100%",
+					display: "flex",
+					flexDirection: "column",
+					flexWrap: "nowrap",
+					height: "100%",
+					justifyContent: "center",
+					textAlign: "center",
+					width: "100%",
+					color: "white",
+					fontSize: 60
+				}}
+			>
 				Selected: {buttonValue}
 			</div>
 		),
