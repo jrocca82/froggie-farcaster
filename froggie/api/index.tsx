@@ -2,15 +2,15 @@ import { Button, Frog, TextInput } from 'frog'
 import { handle } from 'frog/vercel'
 
 // Uncomment to use Edge Runtime.
-export const config = {
-  runtime: 'edge',
-}
+// export const config = {
+//   runtime: 'edge',
+// }
 
 export const app = new Frog({
   assetsPath: '/',
   basePath: '/api',
   // Supply a Hub API URL to enable frame verification.
-  hubApiUrl: 'https://api.hub.wevm.dev',
+  // hubApiUrl: 'https://api.hub.wevm.dev',
 })
 
 app.frame('/', (c) => {
