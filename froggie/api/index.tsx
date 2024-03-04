@@ -56,7 +56,7 @@ app.frame("/", (c) => {
 			</div>
 		),
 		intents: [
-			<TextInput placeholder="Enter custom fruit..." />,
+			<TextInput placeholder="Enter custom chain..." />,
 			<Button value="mainnet">Mainnet</Button>,
 			<Button value="polygon">Polygon</Button>,
 			<Button value="base">Base</Button>,
