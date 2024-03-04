@@ -12,7 +12,7 @@ app.frame("/", (c) => {
 	const { buttonValue, inputText, status } = c;
 	const chain = inputText || buttonValue;
 	return c.res({
-		action: '/submit',
+		action: "/submit",
 		image: (
 			<div
 				style={{
@@ -45,9 +45,9 @@ app.frame("/", (c) => {
 					}}
 				>
 					Hello! Choose your favorite network
-					{/* {status === 'response'
-            ? `Nice choice.${chain ? ` ${chain.toUpperCase()}!!` : ''}`
-            : 'Welcome!'} */}
+					{status === "response"
+						? `Nice choice. ${chain ? ` ${chain.toUpperCase()}!!` : ""}`
+						: "Welcome!"}
 				</div>
 			</div>
 		),
@@ -58,33 +58,6 @@ app.frame("/", (c) => {
 			<Button value="base">Base</Button>,
 			status === "response" && <Button.Reset>Reset</Button.Reset>,
 		],
-	});
-});
-
-
-app.frame("/submit", (c) => {
-	const { buttonValue } = c;
-	return c.res({
-		image: (
-			<div
-				style={{
-					alignItems: "center",
-					background: "black",
-					backgroundSize: "100% 100%",
-					display: "flex",
-					flexDirection: "column",
-					flexWrap: "nowrap",
-					height: "100%",
-					justifyContent: "center",
-					textAlign: "center",
-					width: "100%",
-					color: "white",
-					fontSize: 60
-				}}
-			>
-				<h1>Selected: {buttonValue}</h1>
-			</div>
-		),
 	});
 });
 
