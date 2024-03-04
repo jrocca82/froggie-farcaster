@@ -1,23 +1,18 @@
 import { Button, Frog, TextInput } from "frog";
 import { handle } from "frog/vercel";
 
-// Uncomment to use Edge Runtime.
-// export const config = {
-//   runtime: 'edge',
-// }
-
 export const app = new Frog({
 	assetsPath: "/",
 	basePath: "/api",
 	// Supply a Hub API URL to enable frame verification.
-	hubApiUrl: "https://api.hub.wevm.dev",
+	// hubApiUrl: "https://api.hub.wevm.dev",
 });
 
 app.frame("/", (c) => {
 	const { buttonValue, inputText, status } = c;
 	const chain = inputText || buttonValue;
 	return c.res({
-		action: "/submit",
+		action: '/submit',
 		image: (
 			<div
 				style={{
@@ -44,14 +39,15 @@ app.frame("/", (c) => {
 						letterSpacing: "-0.025em",
 						lineHeight: 1.4,
 						marginTop: 30,
+						display: "flex",
 						padding: "0 120px",
 						whiteSpace: "pre-wrap",
 					}}
 				>
 					Hello! Choose your favorite network
-					{status === 'response'
+					{/* {status === 'response'
             ? `Nice choice.${chain ? ` ${chain.toUpperCase()}!!` : ''}`
-            : 'Welcome!'}
+            : 'Welcome!'} */}
 				</div>
 			</div>
 		),
@@ -73,10 +69,7 @@ app.frame("/submit", (c) => {
 			<div
 				style={{
 					alignItems: "center",
-					background:
-						status === "response"
-							? "linear-gradient(to right, #432889, #17101F)"
-							: "black",
+					background: "black",
 					backgroundSize: "100% 100%",
 					display: "flex",
 					flexDirection: "column",
@@ -89,7 +82,7 @@ app.frame("/submit", (c) => {
 					fontSize: 60
 				}}
 			>
-				Selected: {buttonValue}
+				<h1>Selected: {buttonValue}</h1>
 			</div>
 		),
 	});
