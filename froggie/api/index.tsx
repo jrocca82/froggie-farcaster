@@ -10,12 +10,12 @@ export const app = new Frog({
 	assetsPath: "/",
 	basePath: "/api",
 	// Supply a Hub API URL to enable frame verification.
-	// hubApiUrl: "https://api.hub.wevm.dev",
+	hubApiUrl: "https://api.hub.wevm.dev",
 });
 
 app.frame("/", (c) => {
-	const { status } = c;
-
+	const { buttonValue, inputText, status } = c;
+	const chain = inputText || buttonValue;
 	return c.res({
 		action: "/submit",
 		image: (
@@ -49,9 +49,9 @@ app.frame("/", (c) => {
 					}}
 				>
 					Hello! Choose your favorite network
-					{/* {status === 'response'
-            ? `Nice choice.${fruit ? ` ${fruit.toUpperCase()}!!` : ''}`
-            : 'Welcome!'} */}
+					{status === 'response'
+            ? `Nice choice.${chain ? ` ${chain.toUpperCase()}!!` : ''}`
+            : 'Welcome!'}
 				</div>
 			</div>
 		),
@@ -64,6 +64,7 @@ app.frame("/", (c) => {
 		],
 	});
 });
+
 
 app.frame("/submit", (c) => {
 	const { buttonValue } = c;
