@@ -31,9 +31,9 @@ app.frame("/", (c) => {
 			</div>
 		),
 		intents: [
-			<Button value="apple">Base</Button>,
-			<Button value="banana">Solana</Button>,
-			<Button value="mango">Polygon</Button>,
+			<Button value="base">Base</Button>,
+			<Button value="solana">Solana</Button>,
+			<Button value="polygon">Polygon</Button>,
 		],
 	});
 });
