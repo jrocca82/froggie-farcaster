@@ -9,6 +9,7 @@ import { handle } from 'frog/vercel'
 export const app = new Frog({
   assetsPath: '/',
   basePath: '/api',
+  browserLocation: '/:path'
   // Supply a Hub API URL to enable frame verification.
   // hubApiUrl: 'https://api.hub.wevm.dev',
 })
