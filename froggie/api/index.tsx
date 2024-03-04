@@ -1,4 +1,4 @@
-import { Button, Frog } from "frog";
+import { Button, Frog, TextInput } from "frog";
 import { handle } from "frog/vercel";
 
 // Uncomment to use Edge Runtime.
@@ -31,9 +31,11 @@ app.frame("/", (c) => {
 			</div>
 		),
 		intents: [
-			<Button value="base">Base</Button>,
-			<Button value="solana">Solana</Button>,
+			<TextInput placeholder="Enter custom chain..." />,
+			<Button value="mainnet">Mainnet</Button>,
 			<Button value="polygon">Polygon</Button>,
+			<Button value="base">Base</Button>,
+			status === "response" && <Button.Reset>Reset</Button.Reset>,
 		],
 	});
 });
